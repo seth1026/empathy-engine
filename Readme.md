@@ -20,7 +20,7 @@
 
 ## 🎯 Emotion-to-Voice Mapping
 
-Uses **Hugging Face’s `j-hartmann/emotion-english-distilroberta-base`** (exactly as recommended in the challenge document).
+Uses **Hugging Face’s `j-hartmann/emotion-english-distilroberta-base`** .
 
 ## 🛠️ Tech Stack & Architecture
 
@@ -75,7 +75,7 @@ I adopted the **MVC (Model-View-Controller)** pattern to keep the code clean, mo
 - **Controller**: `app.py`
 
 ### Emotion Detection
-- Used **Hugging Face transformers** with the pre-trained model `j-hartmann/emotion-english-distilroberta-base` (exactly as recommended in the challenge document).
+- Used **Hugging Face transformers** with the pre-trained model `j-hartmann/emotion-english-distilroberta-base`.
 - This provides 7 granular emotions with confidence scores: joy, sadness, anger, fear, surprise, disgust, neutral.
 - Added custom rule-based logic to detect **Inquisitive** for question sentences.
 
