@@ -43,7 +43,6 @@ Uses **Hugging Face’s `j-hartmann/emotion-english-distilroberta-base`** (exact
 ├── ⚙️ .gitignore
 ├── 📝 Readme.md
 ├── 🐍 app.py
-├── 🎵 output_neutral_105012.wav
 └── 📄 requirements.txt
 ```
 
