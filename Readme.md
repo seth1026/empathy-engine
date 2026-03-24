@@ -55,15 +55,16 @@ Uses **Hugging Face’s `j-hartmann/emotion-english-distilroberta-base`** (exact
 
 2. Create and activate virtual environment: \
    python -m venv .venv \
-   .venv\Scripts\activate      # On Windows
+   .venv\Scripts\activate      # On Windows \
+   source .venv/bin/activate   # On macOS/Linux
 
-3. Install dependencies: \
+4. Install dependencies: \
    pip install -r requirements.txt
 
-4. Run the application: \
+5. Run the application: \
    python app.py
 
-5. Open http://127.0.0.1:5000 in your browser.
+6. Open http://127.0.0.1:5000 in your browser.
 
 ## 📝 Notes on Design Choices & Emotion-to-Voice Mapping Logic
 
