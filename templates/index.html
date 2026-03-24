@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empathy Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .glass { background: rgba(255,255,255,0.08); backdrop-filter: blur(12px); }
+        .gradient-text { background: linear-gradient(90deg, #a855f7, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 min-h-screen text-white flex items-center justify-center">
+
+    <div class="max-w-2xl w-full mx-auto px-6 py-12">
+        <div class="flex items-center justify-center gap-3 mb-10">
+            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center text-3xl shadow-lg">🎙️</div>
+            <h1 class="text-5xl font-bold gradient-text tracking-tight">Empathy Engine</h1>
+        </div>
+        <p class="text-center text-slate-400 mb-8 text-lg">Detect emotion • Modulate voice • Feel the difference</p>
+
+        <div class="glass border border-white/10 rounded-3xl p-8 shadow-2xl">
+            <form method="post" class="space-y-6">
+                <textarea name="text" rows="5" 
+                          class="w-full bg-white/5 border border-white/10 focus:border-purple-400 rounded-2xl px-6 py-5 text-lg placeholder-slate-400 focus:outline-none resize-none"
+                          placeholder="Type or paste your message here..."></textarea>
+                
+                <button type="submit"
+                        class="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 transition-all font-semibold text-xl py-6 rounded-2xl flex items-center justify-center gap-3 shadow-lg hover:shadow-purple-500/50 active:scale-95">
+                    <i class="fas fa-waveform"></i>
+                    SPEAK WITH EMOTION
+                </button>
+            </form>
+
+            {% if filename %}
+            <div class="mt-10 space-y-6">
+                <div class="flex justify-center">
+                    <div class="inline-flex items-center gap-2 px-8 py-3 rounded-3xl bg-white/10 border border-white/20 text-xl font-semibold shadow-inner">
+                        {{ emotion }}
+                        <span class="text-sm font-normal text-slate-400">(Confidence: {{ confidence|round(2) }})</span>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-6">
+                    <audio controls autoplay class="w-full accent-purple-500">
+                        <source src="{{ filename }}" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="flex justify-center">
+                    <a href="{{ filename }}" download
+                       class="flex items-center gap-2 text-slate-300 hover:text-white transition-colors">
+                        <i class="fas fa-download"></i>
+                        <span class="font-medium">Download .mp3</span>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="mt-12">
+            <p class="text-slate-400 text-center mb-4 text-sm font-medium tracking-widest">TRY THESE EMOTIONS</p>
+            <div class="grid grid-cols-3 sm:grid-cols-5 gap-3">
+                <button onclick="document.querySelector('textarea').value='I am really sad today.';document.querySelector('form').submit()" 
+                        class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 py-4 rounded-2xl text-sm font-medium transition-all">😢 Sad</button>
+                <button onclick="document.querySelector('textarea').value='Wow! This is the best news ever!';document.querySelector('form').submit()" 
+                        class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 py-4 rounded-2xl text-sm font-medium transition-all">😃 Happy</button>
+                <button onclick="document.querySelector('textarea').value='I am really frustrated with this service.';document.querySelector('form').submit()" 
+                        class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 py-4 rounded-2xl text-sm font-medium transition-all">😠 Frustrated</button>
+                <button onclick="document.querySelector('textarea').value='I am concerned about the delay.';document.querySelector('form').submit()" 
+                        class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 py-4 rounded-2xl text-sm font-medium transition-all">🤔 Concerned</button>
+                <button onclick="document.querySelector('textarea').value='What time is the meeting tomorrow?';document.querySelector('form').submit()" 
+                        class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 py-4 rounded-2xl text-sm font-medium transition-all">❓ Inquisitive</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
