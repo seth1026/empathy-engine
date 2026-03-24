@@ -45,11 +45,11 @@ Uses **Hugging Face’s `j-hartmann/emotion-english-distilroberta-base`** (exact
 ## 🚀 Installation & Setup
 
 1. Clone the repository:
-   git clone <https://github.com/seth1026/empathy-engine.git>
+   git clone <https://github.com/seth1026/empathy-engine.git> \
    cd empathy-engine
 
 2. Create and activate virtual environment:
-   python -m venv .venv
+   python -m venv .venv \
    .venv\Scripts\activate      # On Windows
 
 3. Install dependencies:
