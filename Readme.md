@@ -30,17 +30,23 @@ Uses **Hugging Face’s `j-hartmann/emotion-english-distilroberta-base`** (exact
 - **Architecture**: **MVC (Model-View-Controller)** for clean, maintainable, and professional code organization
 
 ## 📂 Project Structure
+```
 ├── 📁 services
 │   ├── 🐍 emotion_service.py
 │   └── 🐍 speech_service.py
 ├── 📁 static
 │   ├── 🎵 empathy_concerned_105657.wav
-│   ├── 🎵 empathy_concerned_105700.wav│
+│   ├── 🎵 empathy_concerned_105700.wav
+│   ├── 🎵 empathy_concerned_105714.wav
 ├── 📁 templates
 │   └── 🌐 index.html
+├── ⚙️ .gitignore
 ├── 📝 Readme.md
 ├── 🐍 app.py
+├── 🎵 output_neutral_105012.wav
 └── 📄 requirements.txt
+```
+
 
 ## 🚀 Installation & Setup
 
